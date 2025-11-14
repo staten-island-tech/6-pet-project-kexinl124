@@ -12,3 +12,7 @@ Coke = pet("Coke", 150, ["Potion"])
 
 Coke.buy({"title": "Sword", "attack": 10000000000})
 print(Coke.__dict__)
+
+import pet
+
+
