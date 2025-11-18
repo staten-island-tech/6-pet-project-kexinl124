@@ -10,8 +10,9 @@ class pet:
         self.inventory.append(item)
         print(self.inventory)
 
-    def eat(self,):
-        self.
+    def eat(self,item):
+        self.inventory.append(item)
+        print(self.inventory)
 
 Coke = pet("Coke", 150, ["Potion"],"Happy")
 
