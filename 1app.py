@@ -12,16 +12,24 @@
 # If EVERYTHING is good, the function should return a dictionary that represents the newly created user.
 
 def school_login(email,password):
-    email = input("Make an email")
-    password = input("Make a password")
     if "@" not in email:
         return "not in email format"
-    if len(password) >= 8:
-        return "valid password format"
-    for char in password:
-        if char.isupper():
-            
+    if len(password) < 8:
+        return "invalid password format"
+    for i in password:
+        if i == i.isdigit:
+            i+=1
+            if i>=1:
+                print("valid password")
+            else:
+                print("invalid password")
+    for x in password:
+        if x == x.upper:
+            x+=1
+            if x>=1:
+                print("valid password")
+            else:
+                print("invalid password")
+school_login("nueina@gmail.com","123Abiopq")
 
-
-
-        
+    
