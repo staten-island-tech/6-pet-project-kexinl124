@@ -16,20 +16,14 @@ def valid(email,password):
         return "not in email format"
     if not isinstance(email,str) or not isinstance(password,str):
         return "invalid"
-    
-
-    
     if len(password) < 8:
-        print("invalid password format")
-   
+        return"invalid password format"
     for i in password:
         if not any(i.isupper() for i in password):
-                return"invalid password"
-
+            return"invalid password"
     for x in password:
         if not any(x.isupper() for x in password):
-                return("invalid password")
-    
+            return"invalid password"
     return{'email':email, 'password':password}
 print(valid("test@gmail.com","passwordmustbestring"))
 

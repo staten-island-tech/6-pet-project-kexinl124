@@ -13,11 +13,29 @@ class pet:
     def eat(self,item):
         self.inventory.append(item)
         print(self.inventory)
+    
+    def hunger(self,item):
+        self.inventory.append(item)
+        print(self.inventory)
 
-Coke = pet("Coke", 150, ["Potion"],"Happy")
+Coke = pet("Coke", 150, ["Potion"],"Happy","cookie")
 
 Coke.buy({"title": "Sword", "attack": 10000000000})
 print(Coke.__dict__)
+
+Coke.eat({"title": "Cookie"})
+print(Coke.__dict__)
+
+Coke.hunger({"percent":"10%"})
+print(Coke.__dict__)
+
+# class pet:
+#     def __init__(self, name, atk):
+#         self.name = name
+#         self.atk = atk
+    
+#     def display_info(self):
+#         return f"User: {self.name}, Level: {self.atk}"
 
 
 
