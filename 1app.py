@@ -11,25 +11,27 @@
 # If ANY of these rules are broken, the function should return an error message explaining what went wrong.
 # If EVERYTHING is good, the function should return a dictionary that represents the newly created user.
 
-def school_login(email,password):
+def valid(email,password):
     if "@" not in email:
         return "not in email format"
+    if not isinstance(email,str) or not isinstance(password,str):
+        return "invalid"
+    
+
+    
     if len(password) < 8:
-        return "invalid password format"
+        print("invalid password format")
+   
     for i in password:
-        if i == i.isdigit:
-            i+=1
-            if i>=1:
-                print("valid password")
-            else:
-                print("invalid password")
+        if not any(i.isupper() for i in password):
+                return"invalid password"
+
     for x in password:
-        if x == x.upper:
-            x+=1
-            if x>=1:
-                print("valid password")
-            else:
-                print("invalid password")
-school_login("nueina@gmail.com","123Abiopq")
+        if not any(x.isupper() for x in password):
+                return("invalid password")
+    
+    return{'email':email, 'password':password}
+print(valid("test@gmail.com","passwordmustbestring"))
+
 
     
