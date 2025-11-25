@@ -1,21 +1,31 @@
 class Pet:
-    def __init__(self, name, money, inventory, feeling):
+    def __init__(self, name, money, inventory):
         self.name = name
         self.money = money
         self.inventory = inventory
-        self.feeling = feeling
+       
+        
+        self.feel = 50
         
     def buy(self, item):
         self.inventory.append(item)
         print(self.inventory)
-    
+       
     def feel(self,item):
         self.inventory.append(item)
-        print(self.inventory)
+        if Coke.buy != "cookie":
+            self.feel -= 10
+            print(f"Coke is {self.feel}% happy")
+        else:
+            self.feel += 10
+            print(f"Coke is {self.feel}% happy")
 
-Coke = Pet("Coke", 150, ["Potion"], "netrual = 50%")
+
+Coke = Pet("Coke", 150, ["Potion"])
 Coke.buy({"cookie"})
-Coke.feel({"happy = 100%"})
+
+
+
 
 
 
