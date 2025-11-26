@@ -1,28 +1,42 @@
 class Pet:
-    def __init__(self, name, money, inventory):
+    def __init__(self, name, money, inventory,foodx,eat):
         self.name = name
         self.money = money
         self.inventory = inventory
+        self.foodx = foodx
+        self.eat = eat
        
-        
-        self.feel = 50
+
+        self.feels = 50
         
     def buy(self, item):
         self.inventory.append(item)
-        print(self.inventory)
+        print(Coke.__dict__)
        
     def feel(self,item):
-        self.inventory.append(item)
+        self.feels.append(item)
         if Coke.buy != "cookie":
-            self.feel -= 10
-            print(f"Coke is {self.feel}% happy")
+            self.feels -= 10
+            print(f"Coke is {self.feels}% happy")
         else:
             self.feel += 10
-            print(f"Coke is {self.feel}% happy")
+            print(f"Coke is {self.feels}% happy")
+    
+    def food(self,item):
+        self.inventory.append(item)
+        print(Coke.__dict__)
 
+    def eaT(self,item):
+        self.food.append(item)
+        self.inventory.append(item)
+        print(Coke.__dict__)
 
-Coke = Pet("Coke", 150, ["Potion"])
+Coke = Pet("Coke", 150, ["Potion"],"fish")
 Coke.buy({"cookie"})
+Coke.food("fish")
+Coke.food("cucumber")
+Coke.food("hot pot")
+
 
 
 
