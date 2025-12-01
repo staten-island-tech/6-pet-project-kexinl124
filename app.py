@@ -1,12 +1,9 @@
 class Pet:
-    def __init__(self, name, money, inventory,foodx,eat):
+    def __init__(self, name, money, inventory,foodx):
         self.name = name
         self.money = money
         self.inventory = inventory
         self.foodx = foodx
-        self.eat = eat
-       
-
         self.feels = 50
         
     def buy(self, item):
@@ -26,16 +23,17 @@ class Pet:
         self.inventory.append(item)
         print(Coke.__dict__)
 
-    def eaT(self,item):
-        self.food.append(item)
-        self.inventory.append(item)
-        print(Coke.__dict__)
+    def eaT(self,food):
+        hunger += 5
+        print(f"You fed Coke {food}, hunger increased, {hunger}")
+    eat = input("Give a food(s) for Coke:")
 
 Coke = Pet("Coke", 150, ["Potion"],"fish")
 Coke.buy({"cookie"})
 Coke.food("fish")
 Coke.food("cucumber")
 Coke.food("hot pot")
+
 
 
 
