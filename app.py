@@ -26,7 +26,7 @@ class Pet:
     def eaT(self,food):
         hunger += 5
         print(f"You fed Coke {food}, hunger increased, {hunger}")
-    eat = input("Give a food(s) for Coke:")
+    
 
 Coke = Pet("Coke", 150, ["Potion"],"fish")
 Coke.buy({"cookie"})
