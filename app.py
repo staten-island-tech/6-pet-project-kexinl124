@@ -1,9 +1,10 @@
 class Pet:
-    def __init__(self, name, money, inventory,foodx):
+    def __init__(self, name, money, inventory,foodx,clothes):
         self.name = name
         self.money = money
         self.inventory = inventory
         self.foodx = foodx
+        self.clothes = clothes
         
         
     def buy(self, item):
@@ -25,11 +26,19 @@ class Pet:
         self.inventory.append(item)
         print(Coke.__dict__)
 
+    eat = input("What would you feel Coke?")
     def eaT(self,food):
-        hunger += 5
-        print(f"You fed Coke {food}, hunger increased, {hunger}")
+        full += 5
+        print(f"You fed Coke {food}, hunger increased, {full}")
+    if eat not in food:
+            print("Sadly Coke does not have that food at home. You will have to go shopping!") 
     
-    
+    cloth = input("What would you like Coke to wear?")
+    def clothesx (self,clothes):
+        self.clothes.append(item)
+    print(f"You made Coke wear{cloth}")
+    if cloth not in clothes:
+        print("Sadly she does not got that cloth")
 
 Coke = Pet("Coke", 150, ["Potion"],"fish")
 Coke.buy({"cookie"})
