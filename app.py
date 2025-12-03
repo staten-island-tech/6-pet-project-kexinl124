@@ -26,7 +26,7 @@ class Pet:
         self.inventory.append(item)
         print(Coke.__dict__)
 
-    eat = input("What would you feel Coke?")
+    eat = input("What do you want to feed Coke?")
     def eaT(self,food):
         full += 5
         print(f"You fed Coke {food}, hunger increased, {full}")
