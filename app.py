@@ -1,47 +1,28 @@
 class Pet:
-    def __init__(self, name, money, inventory,foodx,clothes):
+    def __init__(self, name, money, inventory,foods, hunger):
         self.name = name
         self.money = money
         self.inventory = inventory
-        self.foodx = foodx
-        self.clothes = clothes
-        
-        
+        self.foods = foods
+        self.hunger = hunger
+
     def buy(self, item):
         self.inventory.append(item)
         print(Coke.__dict__)
-       
-    feels=50
-    def feel(self,feels): 
-        if Coke.buy != "cookie":
-            feels -= 10
-            feels = self.feels
-            print(f"Coke is {self.feels}% happy")
-        else:
-            feels += 10
-            feels = self.feels
-            print(f"Coke is {self.feels}% happy")
     
     def food(self,item):
         self.inventory.append(item)
         print(Coke.__dict__)
 
-    eat = input("What do you want to feed Coke?")
-    def eaT(self,food):
-        full += 5
-        print(f"You fed Coke {food}, hunger increased, {full}")
-    if eat not in food:
+    def hungry(self,food):
+        hunger = 50
+        eat = input("What do you want to feed Coke?")
+        hunger+=10
+        print(f"You fed Coke {food}, hunger level {hunger}")
+        if eat not in Coke.food:
             print("Sadly Coke does not have that food at home. You will have to go shopping!") 
-    
-    cloth = input("What would you like Coke to wear?")
-    def clothesx (self,clothes):
-        self.clothes.append(item)
-    print(f"You made Coke wear{cloth}")
-    if cloth not in clothes:
-        print("Sadly she does not got that cloth")
 
-Coke = Pet("Coke", 150, ["Potion"],"fish")
-Coke.buy({"cookie"})
+Coke = Pet("Coke", 150, ["Potion"],"fish", 50)
 Coke.food("fish")
 Coke.food("cucumber")
 Coke.food("hot pot")
