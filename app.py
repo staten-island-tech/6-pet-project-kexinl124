@@ -10,24 +10,31 @@ class Pet:
         self.inventory.append(item)
         print(Coke.__dict__)
     
-    def food(self,item):
-        self.inventory.append(item)
-        print(Coke.__dict__)
+    # def food(self,food):
+    #     self.foods.append(food)
+    #     print(Coke.__dict__)
 
-    def hungry(self,food):
-        while self.live == True:
-            if self.hunger <=
-        hunger = 50
-        eat = input("What do you want to feed Coke?")
-        hunger+=10
-        print(f"You fed Coke {food}, hunger level {hunger}")
-        if eat not in Coke.food:
-            print("Sadly Coke does not have that food at home. You will have to go shopping!") 
+    def hungry(self):
+        if self.hunger >= 50 and self.hunger <= 100:
+            print(f"{self.name} is not hungry, it's hunger level is at {self.hunger}%")
+        elif self.hunger < 50:
+            print(f"You should feed {self.name}, it's hungry, its hungry level is at {self.hunger}%")
+        else:
+            print(f"Stop feeding {self.name}, it's obese, its hungry level is at {self.hunger}%")
+    
+    def feed (self,foods):
+        while self.hunger < 50:
+            eat = input(f"What do you want to feed Coke?Here are the choices {self.foods}")
+            if eat not in Coke.food:
+                print("Sadly, you don't have that food. You will have to go shopping!") 
+            else:
+                self.hunger+=10
+                print(f"You fed Coke {foods}, it's hunger level {self.hunger}")
+        
 
-Coke = Pet("Coke", 150, ["Potion"],"fish", 50)
-Coke.food("fish")
-Coke.food("cucumber")
-Coke.food("hot pot")
+Coke = Pet("Coke", 150, ["Potion"],["apple","cookie"], 50)
+
+
 
 
 
