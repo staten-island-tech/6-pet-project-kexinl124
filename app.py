@@ -15,6 +15,8 @@ class Pet:
         print(Coke.__dict__)
 
     def hungry(self,food):
+        while self.live == True:
+            if self.hunger <=
         hunger = 50
         eat = input("What do you want to feed Coke?")
         hunger+=10
