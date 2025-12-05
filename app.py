@@ -1,10 +1,16 @@
 class Pet:
-    def __init__(self, name, money, inventory,foods, hunger):
+    def __init__(self, name,inventory,feed, feeling, hunger,living):
         self.name = name
-        self.money = money
         self.inventory = inventory
-        self.foods = foods
+        self.feeling = feeling
         self.hunger = hunger
+        self.feed = feed
+        self.living = living
+        living = True
+
+        self.happiness = 50
+        self.hunger = 50
+
 
     def buy(self, item):
         self.inventory.append(item)
@@ -13,26 +19,26 @@ class Pet:
     # def food(self,food):
     #     self.foods.append(food)
     #     print(Coke.__dict__)
-
-    def hungry(self):
-        if self.hunger >= 50 and self.hunger <= 100:
-            print(f"{self.name} is not hungry, it's hunger level is at {self.hunger}%")
-        elif self.hunger < 50:
-            print(f"You should feed {self.name}, it's hungry, its hungry level is at {self.hunger}%")
-        else:
-            print(f"Stop feeding {self.name}, it's obese, its hungry level is at {self.hunger}%")
     
-    def feed (self,foods):
-        while self.hunger < 50:
-            eat = input(f"What do you want to feed Coke?Here are the choices {self.foods}")
-            if eat not in Coke.food:
-                print("Sadly, you don't have that food. You will have to go shopping!") 
-            else:
-                self.hunger+=10
-                print(f"You fed Coke {foods}, it's hunger level {self.hunger}")
+    def hungry(self, feed):
+        feed = input("what food would you feed Coke?")
+        if feed in self.inventory:
+            self.hunger += 10
+        if self.hunger >= 80 and self.hunger <= 100:
+            print(f"{self.name} is not hungry, it's hunger level is at {self.hunger}%")
+        elif self.hunger < 80 and self.hunger >= 0:
+            print(f"You should feed {self.name}, it's hungry, its hungry level is at {self.hunger}%")
+        elif self.hunger < 0:
+            print(f"{self.name} is dead, its hungry level is at {self.hunger}%")
+            self.living = "not living"
+        else:
+            print(f"{self.name} is dead, its hungry level at {self.hunger}%")
+            self.living = "not living"
+    
         
 
-Coke = Pet("Coke", 150, ["Potion"],["apple","cookie"], 50)
+Coke = Pet("Coke", ["apple","cookie"], "feed", "feeling", "hunger level:", "living")
+print(Coke.__dict__)
 
 
 
