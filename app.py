@@ -7,9 +7,19 @@ class Pet:
         self.feed = feed
         self.living = living
         living = True
-
         self.happiness = 50
         self.hunger = 50
+
+    def activites (self, choice):
+        choice = input("What would you want to with Coke? buy? feed? play? ignore?").lower
+        if choice == "feed":
+            feed = input( "what food would you like to feed Coke?")
+            print(feed)
+        if choice == "ignore":
+            self.happiness -=10
+            print(f"{self.name} happiness level is at {self.happiness}")
+        
+        
 
 
     def buy(self, item):
@@ -23,17 +33,21 @@ class Pet:
     def hungry(self, feed):
         feed = input("what food would you feed Coke?")
         if feed in self.inventory:
-            self.hunger += 10
-        if self.hunger >= 80 and self.hunger <= 100:
-            print(f"{self.name} is not hungry, it's hunger level is at {self.hunger}%")
-        elif self.hunger < 80 and self.hunger >= 0:
-            print(f"You should feed {self.name}, it's hungry, its hungry level is at {self.hunger}%")
+            self.hunger -= 10
+        else:
+            print("Item not founded!")
+        if self.hunger >= 50 and self.hunger <= 100:
+            print(f"{self.name} is hungry, it's hunger level is at {self.hunger}%")
+        elif self.hunger < 50 and self.hunger >= 0:
+            print(f"You should stop feeding {self.name}, it is not hungry, its hungry level is at {self.hunger}%")
         elif self.hunger < 0:
             print(f"{self.name} is dead, its hungry level is at {self.hunger}%")
-            self.living = "not living"
+            self.living = False
         else:
             print(f"{self.name} is dead, its hungry level at {self.hunger}%")
-            self.living = "not living"
+            self.living = False
+        if 
+    
     
         
 
