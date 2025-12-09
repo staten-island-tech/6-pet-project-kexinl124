@@ -1,5 +1,5 @@
 class Pet:
-    def __init__(self, name,inventory,feed, feeling, hunger,living):
+    def __init__(self, name,inventory,feed, feeling, hunger,living,playlist):
         self.name = name
         self.inventory = inventory
         self.feeling = feeling
@@ -9,18 +9,25 @@ class Pet:
         living = True
         self.happiness = 50
         self.hunger = 50
+        self.playlist = playlist
 
     def activites (self, choice):
-        choice = input("What would you want to with Coke? buy? feed? play? ignore?").lower
+        choice = input("What would you want to with Coke? feed? play? ignore?").lower()
         if choice == "feed":
             feed = input( "what food would you like to feed Coke?")
             print(feed)
-        if choice == "ignore":
+        elif choice == "ignore" or "no":
             self.happiness -=10
-            print(f"{self.name} happiness level is at {self.happiness}")
+            self.living -= 10
+            print(f"{self.name} happiness level is at {self.happiness} and living level is {self.living}")
+        elif choice == "play":
+            play = input("what do you want her to do?").lower()
+            playlist = ["dodgeball", "soccer", "hide-and-seek", "video games"]
+            if play not in playlist:
+                print("unavaliable")
+        else:
+            print("choose a valid activity")
         
-        
-
 
     def buy(self, item):
         self.inventory.append(item)
@@ -46,13 +53,15 @@ class Pet:
         else:
             print(f"{self.name} is dead, its hungry level at {self.hunger}%")
             self.living = False
-        if 
+        
     
     
         
 
-Coke = Pet("Coke", ["apple","cookie"], "feed", "feeling", "hunger level:", "living")
+Coke = Pet("Coke", ["apple","cookie"], "feed", "feeling", "hunger level:", "living", "play")
 print(Coke.__dict__)
+playlist = ["dodgeball", "soccer", "hide-and-seek", "video games"]
+choice = input("What would you want to with Coke? buy? feed? play? ignore?").lower
 
 
 
