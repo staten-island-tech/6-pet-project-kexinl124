@@ -3,7 +3,6 @@ class Pet:
         self.name = name
         self.inventory = inventory
         self.feeling = feeling
-        self.hunger = hunger
         self.feed = feed
         self.living = living
         living = True
